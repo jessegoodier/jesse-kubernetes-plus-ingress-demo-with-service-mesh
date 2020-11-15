@@ -1,0 +1,31 @@
+
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: cafe-ingress
+  namespace: default
+spec:
+  ingressClassName: nginx # use only with k8s version >= 1.18.0
+  tls:
+  - hosts:
+    - cafe.nginx.rocks
+    secretName: nginx-rocks-cert
+  rules:
+  - host: cafe.nginx.rocks
+    http:
+      paths:
+        - path: /tea
+          pathType: Prefix
+          backend:
+            service:
+              name: tea-svc
+              port: 
+                number: 80
+        - path: /coffee
+          pathType: Prefix
+          backend:
+            service:
+              name: coffee-svc
+              port: 
+                number: 80

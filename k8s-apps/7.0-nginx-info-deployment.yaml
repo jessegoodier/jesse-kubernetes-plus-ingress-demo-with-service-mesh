@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-info-deployment
+  labels:
+    app: nginx
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nginx-info
+  template:
+    metadata:
+      labels:
+        app: nginx-info
+    spec:
+      containers:
+      - name: nginx-info
+        image: jgoodier/nginx-hello:latest
+        ports:
+        - containerPort: 80
+        - containerPort: 90

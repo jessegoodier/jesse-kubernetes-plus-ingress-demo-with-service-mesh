@@ -1,0 +1,19 @@
+---
+apiVersion: k8s.nginx.org/v1
+kind: VirtualServer
+metadata:
+  name: nginx-info-vs-rate-limit
+spec:
+  host: k8s-vs.nginx.rocks
+  tls:
+    secret: nginx-rocks-cert
+  policies:
+  - name: rate-limit-policy
+  upstreams:
+  - name: nginx-info
+    service: nginx-info
+    port: 90
+  routes:
+  - path: /
+    action:
+      pass: nginx-info
