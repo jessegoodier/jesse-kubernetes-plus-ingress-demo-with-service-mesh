@@ -24,6 +24,8 @@ Adapted from <https://www.redpill-linpro.com/techblog/2019/04/04/kubernetes-setu
 
 1. That process will push your container image to your private registry. You need to edit [7.plus-ingress-install.sh](7.plus-ingress-install.sh) with one of the auth methods to authenticate to your registry.
 
+1. You will also need to copy the NSM images to nginx-service-mesh
+
 1. If not using vagrant, just run `sh 1.run-all-scripts.sh` do not run as sudo.
 
 1. If not using vagrant, you'll need to modify your hosts file and add these hosts to it, pointing to your VM: cafe.example.com k8s.nginx.rocks k8s-dashboard.nginx.rocks k8s-vs.nginx.rocks kic-waf.nginx.rocks

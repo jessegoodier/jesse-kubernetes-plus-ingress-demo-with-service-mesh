@@ -1,5 +1,5 @@
 docker-regcred.yaml
 .vagrant
 get-docker.sh
-nginx-service-mesh/nginx-mesh-images-0.6.0/*
+*.gz
 nginx-service-mesh/nginx-meshctl
