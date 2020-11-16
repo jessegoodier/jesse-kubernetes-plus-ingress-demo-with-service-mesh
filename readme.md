@@ -34,7 +34,9 @@ Adapted from <https://www.redpill-linpro.com/techblog/2019/04/04/kubernetes-setu
 
 ## Steps if using vagrant (you need to run all steps except 4. and 5.)
 
-7. Vagrant (brew install vagrant)
+# This currently is not working, just use the method above for now
+
+8. Vagrant (brew install vagrant)
 
 1. The default provider in this example is Virtualbox. Modify the Vagrantfile to your needs.
 
