@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-info
+spec:
+  ports:
+  - port: 80
+    targetPort: 80
+    protocol: TCP
+    name: html-http
+  - port: 90
+    targetPort: 90
+    protocol: TCP
+    name: plain-text-http    
+  selector:
+    app: nginx-info

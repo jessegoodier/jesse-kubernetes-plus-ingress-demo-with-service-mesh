@@ -3,7 +3,7 @@ kubectl apply -f kubernetes-ingress/deployments/common/crds
 kubectl apply -f kubernetes-ingress/deployments/common/ns-and-sa.yaml
 kubectl apply -f kubernetes-ingress/deployments/rbac/rbac.yaml
 kubectl apply -f kubernetes-ingress/deployments/rbac/ap-rbac.yaml
-kubectl apply -n nginx-ingress -f k8s-apps/7.2-nginx.rocks-cert.yaml
+kubectl apply -f k8s-apps/nginx-info/7.2-nginx.rocks-cert.yaml -n nginx-ingress
 kubectl apply -f kubernetes-ingress/deployments/common/ingress-class.yaml
 kubectl apply -f kubernetes-ingress/deployments/common/nginx-config.yaml
 

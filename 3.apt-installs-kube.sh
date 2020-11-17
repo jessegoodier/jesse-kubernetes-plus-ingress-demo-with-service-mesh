@@ -23,7 +23,7 @@ curl -L https://download.opensuse.org/repositories/devel:kubic:libcontainers:sta
 curl -L https://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable/$OS/Release.key | apt-key add -
 
 apt-get update
-apt-get install -y helm cri-o cri-o-runc bash-completion jq  apt-transport-https ca-certificates curl gnupg2
+apt-get install -y helm cri-o cri-o-runc bash-completion jq apt-transport-https ca-certificates curl gnupg2
 apt-get install -y kubelet kubeadm kubectl
 apt-mark hold kubelet kubeadm kubectl
 

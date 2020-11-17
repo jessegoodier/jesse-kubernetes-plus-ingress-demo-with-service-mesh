@@ -60,9 +60,9 @@ docker exec -it --user=0 --privileged k8s_plus-nap-kic-nginx-ingress-***** apt u
 docker exec -it --user=0 --privileged k8s_plus-nap-kic-nginx-ingress-***** apt -y install curl vim
 docker exec -it --user=0 --privileged k8s_plus-nap-kic-nginx-ingress-***** bash
 https://docs.nginx.com/nginx-service-mesh/tutorials/deploy-example-app/
-kubectl -n nginx-mesh port-forward --address=0.0.0.0 svc/grafana 3000:3000&
-kubectl -n nginx-mesh port-forward prometheus-688c65979c-4htlb 9090 --address 0.0.0.0 &
-kubectl -n nginx-mesh port-forward <tracing pod name> <tracing-pod-port>
+kubectl -n nginx-mesh port-forward svc/grafana --address=0.0.0.0 3000:3000 &
+kubectl -n nginx-mesh port-forward svc/prometheus --address 0.0.0.0 9090 &
+kubectl -n nginx-mesh port-forward svc/zipkin --address 0.0.0.0 9411 &
 Open the tracing server URL in a browser. For example, you might access the Zipkin server at http://localhost:9411/zipkin/.
 
 ```
