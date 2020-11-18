@@ -1,5 +1,5 @@
 
-if $PWD/nginx-service-mesh/nginx-meshctl; then
+if [ -f "nginx-service-mesh/nginx-meshctl" ]; then
   chmod +x nginx-service-mesh/nginx-meshctl
   sudo cp nginx-service-mesh/nginx-meshctl /usr/local/bin
 else   

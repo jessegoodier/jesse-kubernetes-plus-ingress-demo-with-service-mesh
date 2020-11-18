@@ -54,16 +54,16 @@ If you run into issues, here are a few commands that you may find useful:
 
 ```
 docker ps -a # look for exiting containers
-docker exec -it --user=0 --privileged k8s_plus-nap-kic-nginx-ingress-***** nginx -T>nginx.conf #output current nginx config
-# or bash into and modify config directly:
+# bash into and modify config directly:
 docker exec -it --user=0 --privileged k8s_plus-nap-kic-nginx-ingress-***** apt update
 docker exec -it --user=0 --privileged k8s_plus-nap-kic-nginx-ingress-***** apt -y install curl vim
 docker exec -it --user=0 --privileged k8s_plus-nap-kic-nginx-ingress-***** bash
-https://docs.nginx.com/nginx-service-mesh/tutorials/deploy-example-app/
 kubectl -n nginx-mesh port-forward svc/grafana --address=0.0.0.0 3000:3000 &
 kubectl -n nginx-mesh port-forward svc/prometheus --address 0.0.0.0 9090 &
 kubectl -n nginx-mesh port-forward svc/zipkin --address 0.0.0.0 9411 &
+kubectl port-forward svc/productpage --address=0.0.0.0 9080:9080 &
 Open the tracing server URL in a browser. For example, you might access the Zipkin server at http://localhost:9411/zipkin/.
+nginx-meshctl services #list services
 
 ```
 

@@ -23,7 +23,7 @@ spec:
       hostNetwork: true
       containers:
       - image: jgoodier/kic-plus-nap:1.9.0
-        imagePullPolicy: Always
+        imagePullPolicy: IfNotPresent
         name: nginx-plus-ingress
         ports:
         - name: http

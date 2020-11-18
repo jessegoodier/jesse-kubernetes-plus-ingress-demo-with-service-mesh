@@ -6,7 +6,7 @@ kubectl apply -f kubernetes-ingress/deployments/rbac/ap-rbac.yaml
 kubectl apply -f k8s-apps/nginx-info/7.2-nginx.rocks-cert.yaml -n nginx-ingress
 kubectl apply -f kubernetes-ingress/deployments/common/ingress-class.yaml
 kubectl apply -f kubernetes-ingress/deployments/common/nginx-config.yaml
-
+kubectl apply -f kubernetes-ingress/deployments/common/kic-dashboard-nodeport.yaml
 # the private registry key is not included in this repo, you need to save your own.
 kubectl apply -n nginx-ingress -f docker-regcred.yaml 
 
