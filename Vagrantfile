@@ -1,5 +1,9 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
+
+This is currently broken, just use the 1.run-all-scripts on a new VM.
+Feel free to fix it and make a pull request ;)
+
 ENV['VAGRANT_DEFAULT_PROVIDER'] = 'vsphere'
 Vagrant.configure("2") do |config|
 

@@ -13,11 +13,11 @@ rules:
   # Other resources
   - apiGroups: [""]
     resources: ["secrets", "nodes", "namespaces", "pods", "serviceaccounts", "services", "configmaps", "endpoints", "persistentvolumeclaims", "replicationcontrollers", "replicationcontrollers/scale", "persistentvolumeclaims", "persistentvolumes", "bindings", "events", "limitranges", "namespaces/status", "pods/log", "pods/status", "replicationcontrollers/status", "resourcequotas", "resourcequotas/status"]
-    verbs: ["update", "delete", "apply", "get", "list", "watch"]
+    verbs: [ "update", "delete", "apply", "get", "list", "watch"]
   
   - apiGroups: ["apps"]
     resources: ["daemonsets", "deployments", "deployments/scale", "replicasets", "replicasets/scale", "statefulsets"]
-    verbs: ["update", "delete", "apply", "get", "list", "watch"]
+    verbs: ["create", "update", "delete", "apply", "get", "list", "watch"]
 
   - apiGroups: ["autoscaling"]
     resources: ["horizontalpodautoscalers"]

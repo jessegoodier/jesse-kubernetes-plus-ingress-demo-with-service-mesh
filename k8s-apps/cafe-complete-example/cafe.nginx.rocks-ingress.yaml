@@ -5,6 +5,8 @@ kind: Ingress
 metadata:
   name: cafe-ingress
   namespace: default
+  annotations:
+    nginx.org/ssl-services: "tea-svc"
 spec:
   ingressClassName: nginx # use only with k8s version >= 1.18.0
   tls:

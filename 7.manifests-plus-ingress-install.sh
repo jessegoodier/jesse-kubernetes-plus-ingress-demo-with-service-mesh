@@ -11,7 +11,7 @@ kubectl apply -f kubernetes-ingress/deployments/common/kic-dashboard-nodeport.ya
 kubectl apply -n nginx-ingress -f docker-regcred.yaml 
 
 if kubectl get secrets -n nginx-ingress|grep regcred; then
-   kubectl apply -f kubernetes-ingress/deployments/deployment/nginx-plus-ingress-mesh.yaml;
+   #kubectl apply -f kubernetes-ingress/deployments/deployment/nginx-plus-ingress-mesh.yaml;
 else   
    RED='\033[0;31m'
    NC='\033[0m' # No Color

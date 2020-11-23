@@ -1,0 +1,18 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: nginx-config
+  namespace: nginx-ingress
+data:
+  opentracing-tracer-config: |
+     {
+       "service_name": "nginx-ingress",
+       "collector_host": "zipkin.nginx-mesh.svc.cluster.local",
+       "collector_port": 9411,
+       "sample_rate": .01
+     },
+       "reporter": 
+     {
+       "localAgentHostPort": "jaeger-agent.default.svc.cluster.local:6831"
+     }
+  opentracing-tracer: "/usr/local/lib/libjaegertracing_plugin.so"

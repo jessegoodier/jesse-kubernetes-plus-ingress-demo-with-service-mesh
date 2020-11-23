@@ -3,9 +3,10 @@ kind: Ingress
 metadata:
   name: bookinfo-ingress
   annotations:
-    nginx.org/location-snippets: |
-     opentracing_propagate_context;
-     opentracing_operation_name "nginx-ingress";
+    nginx.org/ssl-services: "productpage"
+    #nginx.org/location-snippets: |
+    # opentracing_propagate_context;
+    # opentracing_operation_name "nginx-ingress";
 spec:
   ingressClassName: nginx
   tls:

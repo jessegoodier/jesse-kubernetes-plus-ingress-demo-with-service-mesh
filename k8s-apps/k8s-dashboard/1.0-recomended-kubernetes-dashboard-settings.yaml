@@ -40,9 +40,9 @@ spec:
   ports:
     - port: 80
       targetPort: 9090
-      #nodePort: 30001
+      nodePort: 30001
       name: dashboard-port
-  #type: NodePort
+  type: NodePort
   selector:
     k8s-app: kubernetes-dashboard
 
