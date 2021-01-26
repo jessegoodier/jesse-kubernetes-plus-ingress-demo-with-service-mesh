@@ -19,7 +19,7 @@ spec:
       serviceAccountName: nginx-ingress
       hostNetwork: true
       containers:
-      - image: docker.nginx.rocks/kic-plus-opentracing:1.9.1
+      - image: jgoodier/kic-plus:1.9.1
         imagePullPolicy: Always
         name: nginx-plus-ingress
         ports:
