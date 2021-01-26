@@ -20,7 +20,6 @@ spec:
         prometheus.io/port: "9113"
     spec:
       serviceAccountName: nginx-ingress
-      hostNetwork: true
       containers:
       - image: docker.nginx.rocks/kic-plus-opentracing:1.9.1
         imagePullPolicy: Always
@@ -55,19 +54,13 @@ spec:
         args:
           - -nginx-plus
           - -nginx-configmaps=$(POD_NAMESPACE)/nginx-config
-          - -default-server-tls-secret=$(POD_NAMESPACE)/nginx-rocks-cert
+          - -default-server-tls-secret=$(POD_NAMESPACE)/default-server-secret
           - -spire-agent-address=/run/spire/sockets/agent.sock
           - -enable-prometheus-metrics
           - -enable-latency-metrics
-          - -enable-app-protect=false
-          - -nginx-status=true
-          - -nginx-status-port=8080
-          - -nginx-status-allow-cidrs=0.0.0.0/0
-          - -enable-internal-routes
+          #- -enable-internal-routes
       volumes:
       - hostPath:
           path: /run/spire/sockets
           type: DirectoryOrCreate
         name: spire-agent-socket
-      imagePullSecrets:
-        - name: regcred

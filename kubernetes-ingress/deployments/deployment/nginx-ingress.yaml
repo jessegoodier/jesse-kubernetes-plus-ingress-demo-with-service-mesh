@@ -17,7 +17,6 @@ spec:
        #prometheus.io/port: "9113"
     spec:
       serviceAccountName: nginx-ingress
-      hostNetwork: true
       containers:
       - image: nginx/nginx-ingress:edge
         imagePullPolicy: Always
@@ -55,7 +54,7 @@ spec:
               fieldPath: metadata.name
         args:
           - -nginx-configmaps=$(POD_NAMESPACE)/nginx-config
-          - -default-server-tls-secret=$(POD_NAMESPACE)/nginx-rocks-cert
+          - -default-server-tls-secret=$(POD_NAMESPACE)/default-server-secret
          #- -v=3 # Enables extensive logging. Useful for troubleshooting.
          #- -report-ingress-status
          #- -external-service=nginx-ingress
